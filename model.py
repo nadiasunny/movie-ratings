@@ -9,7 +9,7 @@ db = SQLAlchemy()
 class User(db.Model):
     """A user."""
 
-    __tablename__ = 'user'
+    __tablename__ = 'users'
 
     user_id = db.Column(db.Integer, autoincrement= True, primary_key=True)
     email = db.Column(db.String, nullable=False, unique=True)
@@ -47,7 +47,7 @@ class Rating(db.Model):
     rating_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     score = db.Column(db.Integer)
     movie_id = db.Column(db.Integer, db.ForeignKey("movies.movie_id"))
-    user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
     
     #1st arg=name of class attr associated with, 2nd is name of attr that'll be used to reference related instances of class
     #>>>rating = Rating.query.get(1)  # Get a rating by primary key
