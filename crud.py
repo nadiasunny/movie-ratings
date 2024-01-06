@@ -23,6 +23,9 @@ def get_user_by_id(user_id):
 
     return User.query.get(user_id)
 
+def get_user_by_email(user_email):
+    """Return user by use"""
+    return User.query.filter(User.email == user_email).all()
 
 def create_movie(title, overview, release_date, poster_path):
     """""Create and return """
