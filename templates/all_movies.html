@@ -3,12 +3,12 @@
 
 {% block body %}
 <ul>
-{% for movie in list_of_movs%}
+{% for movie in movies %}
     <li>
-        <a href='/movies/{{movie.id}}'>
+        <a href="/movies/{{movie.movie_id}}">
         {{movie.title}}
         </a>
     </li>
 {% endfor %}
 </ul>
-{% endblock%}
+{% endblock body%}
